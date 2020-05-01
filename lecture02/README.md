@@ -29,7 +29,7 @@ Where ```-a``` shows hidden files; ```-s``` shows the sizes of the files; ```-h`
 
 To create our zip with only the html files, we can use the command:
 
-```ls *.html | xargs -d '\n' tar czf teste.tar```
+```find . -name '*.html' | xargs -d '\n' tar czf teste.tar```
 
 5. (Advanced) Write a command or script to recursively find the most recently modified file in a directory. More generally, can you list all files by recency?
 
