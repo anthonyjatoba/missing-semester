@@ -19,4 +19,17 @@ Where ```-a``` shows hidden files; ```-s``` shows the sizes of the files; ```-h`
 
 3. Say you have a command that fails rarely. In order to debug it you need to capture its output but it can be time consuming to get a failure run. Write a bash script that runs the following script until it fails and captures its standard output and error streams to files and prints everything at the end. Bonus points if you can also report how many runs it took for the script to fail.
 
-**Answer:** see [debug.sh](debug.sh)
+**Answer:** see [debug.sh](debug.sh)    
+
+4. [...] Your task is to write a command that recursively finds all HTML files in the folder and makes a zip with them. Note that your command should work even if the files have spaces
+
+**Answer:** creating some files
+
+```touch file-{a..j}.html image-{1..10}.jpg 'file\ with\ spaces\ {k..z}.html'```
+
+To create our zip with only the html files, we can use the command:
+
+```ls *.html | xargs -d '\n' tar czf teste.tar```
+
+5. (Advanced) Write a command or script to recursively find the most recently modified file in a directory. More generally, can you list all files by recency?
+
