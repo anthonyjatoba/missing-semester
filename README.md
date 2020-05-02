@@ -1,2 +1,3 @@
-# missing-semester
-Exercises from the MIT missing semester course
+# Missing Semester
+
+Solutions for the exercises from the [MIT Missing Semester](https://missing.csail.mit.edu/) course.
