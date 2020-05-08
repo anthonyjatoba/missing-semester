@@ -2,9 +2,7 @@
 
 ## Lecture 02 solution
 
-### 1. Take this (short interactive regex tutorial)[https://regexone.com/]
-
-
+### 1. Take this [short interactive regex tutorial](https://regexone.com/)
 
 ### 2. Find:
 
@@ -51,3 +49,13 @@ cat /usr/share/dict/words
  ```
 
 **Chalenge:** -
+
+#### 2. To do in-place substitution it is quite tempting to do something like ```sed s/REGEX/SUBSTITUTION/ input.txt > input.txt```. However this is a bad idea, why? Is this particular to sed? Use man sed to find out how to accomplish this.
+
+**Answer:** Bash processes the redirects (```>```) first, so, by the time the ```sed``` command is executed, the file is empty, making the regex substitution not possible.
+
+To solve this issue, one can use the ```-i``` option:
+
+```sed -E -i 's/REGEX/SUBSTITUTION/ input.txt```
+
+This option writes the output to a temporary file, then rename it to the original file name.
