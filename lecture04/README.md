@@ -62,7 +62,7 @@ This option writes the output to a temporary file, then rename it to the origina
 
 ### 4. Find your average, median, and max system boot time over the last ten boots
 
-**Answer: ** using R to calculate the statistics:
+**Answer:** using R to calculate the statistics:
 
 ```
 journalctl 
@@ -70,4 +70,16 @@ journalctl
  | tail -n10
  | sed -E "s/.* \(userspace\) = (.*)s\.$/\1/"
  | R --slave -e 'x <- scan(file="stdin", quiet=TRUE); summary(x)'
+```
+
+### 5. Look for boot messages that are not shared between your past three reboots.
+
+**Answer:**
+
+```
+{journalctl -b & journalctl -b -1 & journalctl -b -2}
+ | sed -E "s/^.*vostro //"
+ | uniq -c
+ | sort -nk1,1
+ | grep "\s[1-2] .*\]:.*.$"
 ```
