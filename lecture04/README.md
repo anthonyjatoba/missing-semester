@@ -1,6 +1,6 @@
 # Missing Semester
 
-## Lecture 02 solution
+## Lecture 04 solution
 
 ### 1. Take this [short interactive regex tutorial](https://regexone.com/)
 
